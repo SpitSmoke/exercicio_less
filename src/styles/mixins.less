@@ -1,0 +1,32 @@
+.flex-center(@justify: space-between) {
+    display: flex;
+    justify-content: @justify;
+    align-items: center;
+}
+
+.grid(@columns: 3, @gap: 1%) {
+    display: grid;
+    grid-template-columns: repeat(@columns, (100% - (@gap * (@columns - 1))) / @columns);
+    column-gap: @gap;
+    row-gap: @gap;
+}
+
+.responsive-max(@width, @styles) {
+    @media screen and (max-width: @width) {
+    @styles();
+    }
+}
+
+.button-style() {
+    display: block;
+    background-color: @product-button-bg;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin-top: 8px;
+    text-decoration: none;
+    &:hover {
+    background-color: @product-button-bg-hover;
+    }
+}

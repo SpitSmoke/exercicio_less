@@ -1,0 +1,4 @@
+.custom(@property, @value) {
+    @escapedProperty: ~'@{property}';
+    @{escapedProperty}: @value;
+}
